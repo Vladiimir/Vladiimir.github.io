@@ -285,7 +285,7 @@
             width: 22%;
         }
 
-        p {
+        p, .label {
             margin: 4px;
         }
 
@@ -541,6 +541,7 @@
             cursor: help;
             text-decoration: none;
             position: relative;
+            top: -2px;
 
             display: inline-block;
             width: 10px;
@@ -600,11 +601,12 @@
 
         function updateInput(el) {
             if(el.value == "") {
-                el.className = el.className.replace(" with-value", " without-value");
+                el.className = el.className.replace(" with-value", "");
+                el.className += " without-value";
             }
             else {
+                el.className = el.className.replace(" without-value", "");
                 el.className += " with-value";
-                el.className = el.className.replace(" without-value", " with-value");
             }
         }
 
@@ -870,8 +872,12 @@
             var requiredFields = document.querySelectorAll('[required]');
             for(var i = 0; i < requiredFields.length; i++)
             {
-                if(requiredFields[i].value == "")
+                if(requiredFields[i].value == "") {
                     errorMsg += requiredFields[i].dataset.description + " is required\n";
+
+                    requiredFields[i].className = requiredFields[i].className.replace(" with-value", "").replace(" without-value", "");
+                    requiredFields[i].className += " without-value";
+                }
             }
 
             var minFields = document.querySelectorAll('[min]');
@@ -1196,8 +1202,8 @@
                     <p>ETA<span class="required-marker">*</span></p>
                 </div>
                     <div class="col c3">
-                        <input placeholder="YYYY-MM-DD" type="text" class="long required" name="etaDate" id="etaDate" onchange="updateInput(this)">
-                        <input placeholder="HH:MM" name="etaTime" class="short required" maxlength="5" onchange="updateInput(this)"><span class="addon wide" >UTC</span>
+                        <input placeholder="YYYY-MM-DD" type="text" class="long required" name="etaDate" id="etaDate" onchange="updateInput(this)" required="" >
+                        <input placeholder="HH:MM" name="etaTime" class="short required" maxlength="5" onchange="updateInput(this)" required="" ><span class="addon wide" >UTC</span>
                     </div>
                 <div class="col c1">
                     <p>Voyage No</p>
@@ -1266,8 +1272,8 @@
                     <p>Date<span class="required-marker">*</span></p>
                 </div>
                 <div class="col c3">
-                    <input class="long required" id="posDate" name="positionDate" placeholder="YYYY-MM-DD" type="text" onchange="updateInput(this)">
-                    <input class="short required" maxlength="5" name="positionTime" placeholder="HH:MM" onchange="updateInput(this)"><span class="addon wide">UTC</span>
+                    <input class="long required" id="posDate" name="positionDate" placeholder="YYYY-MM-DD" type="text" onchange="updateInput(this)" required="">
+                    <input class="short required" maxlength="5" name="positionTime" placeholder="HH:MM" onchange="updateInput(this)" required=""><span class="addon wide">UTC</span>
                 </div>
             </div>
             <div class="row">
@@ -1276,13 +1282,13 @@
                 </div>
                 <div class="col c5">
                     <input class="short required" maxlength="2" required="" min="0" max="89" data-description="Lat. degrees" name="latDeg" type="text" onchange="updateInput(this)">
-                    <span class="addon small">°</span>
+                    <span class="addon small">&deg;</span>
                     <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lat. minutes" name="latMin" type="text" onchange="updateInput(this)">
                     <span class="addon small">'</span>
                     <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lat. seconds" name="latSec" type="text" onchange="updateInput(this)">
                     <span class="addon small">''</span> 
 
-                    <select name="latDir"  class="required" onchange="updateInput(this)">
+                    <select name="latDir"  class="required" required="" onchange="updateInput(this)">
                         <option selected="selected"></option>
                         <option>
                             N
@@ -1298,12 +1304,12 @@
                 </div>
                 <div class="col c5">
                     <input class="short required" maxlength="3" required="" min="0" max="179" data-description="Lon. degrees" name="lonDeg" type="text" onchange="updateInput(this)">
-                    <span class="addon small">°</span>
+                    <span class="addon small">&deg;</span>
                     <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lon. minutes" name="lonMin" type="text" onchange="updateInput(this)">
                     <span class="addon small">'</span>
                     <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lon. seconds" name="lonSec" type="text" onchange="updateInput(this)">
                     <span class="addon small">''</span>
-                    <select name="lonDir" class="required" onchange="updateInput(this)">
+                    <select name="lonDir" class="required" onchange="updateInput(this)" required="">
                         <option selected="selected"></option>
                         <option>
                             E
@@ -1389,8 +1395,8 @@
                     </div>
                     <div class="col c7">
                         <input class="medium " name="Wind" maxlength="6" type="number">
-                            <input type="radio" name="obsWindRadio" value="kts" id="obsWindRadioKts" checked=""><label for="obsWindRadioKts">Kts</label>
-                            <input type="radio" name="obsWindRadio" value="bft" id="obsWindRadioBft"><label for="obsWindRadioBft">Bft</label>
+                            <input type="radio" name="obsWindRadio" value="kts" id="obsWindRadioKts" checked=""><label for="obsWindRadioKts"> Kts</label>
+                            <input type="radio" name="obsWindRadio" value="bft" id="obsWindRadioBft"><label for="obsWindRadioBft"> Bft</label>
                     </div>
                 </div>
                 <div class="row">
@@ -1872,8 +1878,10 @@
                 </div>
                     <div class="row">
                 <div class="col c1andahalf">
-                    <p>Speed Combination (C/P active)</p>
-                    <div class="tooltip">i<span>Please select the speed/fuel consumption combination that will be applicable from the reported time and date onward. These are charter-party conditions received by MeteoGroup. Note that the speed/fuel combination will NOT be applicable on the past period. Please contact us if you have received orders to sail against a different speed/fuel consumption than made selectable</span></div>
+                    <div>Speed Combination (C/P active)
+                        <div class="tooltip">i<span>Please select the speed/fuel consumption combination that will be applicable from the reported time and date onward. These are charter-party conditions received by MeteoGroup. Note that the speed/fuel combination will NOT be applicable on the past period. Please contact us if you have received orders to sail against a different speed/fuel consumption than made selectable</span></div>
+                    </div>
+
                 </div>
                 <div class="col c1andahalf">
                         <select name="SpeedComb" class="info">
@@ -1883,7 +1891,7 @@
                         </select>
                 </div>
                 <div class="col c1andahalf">
-                    <p>Condition (Laden/Ballast)</p><div class="info-button" data-tooltip="Please select if you are sailing in Laden or Ballast condition">i</div><p></p>
+                    <p>Condition (Laden/Ballast)</p>
                 </div>
                 <div class="col c1andahalf">
                         <select name="Condition" class="info">
@@ -1907,7 +1915,7 @@
                     </div>
                     <div class="row">
                 <div class="col c1andahalf">
-                    <p>Aft Draft</p><div class="tooltip">i<span>Aft draft in meters</span></div><p></p>
+                    <div class="label">Aft Draft <div class="tooltip">i<span>Aft draft in meters</span></div></div>
 
                 </div>
                 <div class="col c1andahalf">
