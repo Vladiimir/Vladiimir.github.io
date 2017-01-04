@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)file://churada/routeguard/ProductRequests/Dev/0/0/20170103094044_2232_EasyNoonReportTool.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>MeteoGroup Easynoon</title>
+    <style type="text/css">
+        body, input, select, textarea {
+            background: 0;
+            border-radius: 0;
+            font: 15px sans-serif;
+            margin: 0;
+        }
+
+        .addon, .btn-sm, .nav, input, select, textarea {
+            outline: 0;
+            font-size: 14px;
+        }
+
+        .smooth {
+            transition: all .2s;
+        }
+
+        .btn, .nav a {
+            text-decoration: none;
+        }
+
+        .container {
+            margin: 0 20px;
+            width: auto;
+        }
+
+        @media(min-width:1310px) {
+            .container {
+                margin: auto;
+                width: 1270px;
+            }
+        }
+
+        .btn, h2 {
+            font-size: 2em;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .btn {
+            background: #999;
+            border-radius: 6px;
+            border: 0;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin: 2px 0;
+            padding: 12px 30px 14px;
+        }
+
+            .btn:hover {
+                background: #888;
+            }
+
+            .btn:active, .btn:focus {
+                background: #777;
+            }
+
+        .btn-a {
+            background: #0ae;
+        }
+
+            .btn-a:hover {
+                background: #09d;
+            }
+
+            .btn-a:active, .btn-a:focus {
+                background: #08b;
+            }
+
+        .btn-b {
+            background: #00b0ca;
+        }
+
+            .btn-b:hover {
+                background: #ed185F;
+            }
+
+            .btn-b:active, .btn-b:focus {
+                background: #ed185F;
+            }
+
+        .btn-c {
+            background: #d33;
+        }
+
+            .btn-c:hover {
+                background: #c22;
+            }
+
+            .btn-c:active, .btn-c:focus {
+                background: #b22;
+            }
+
+        .btn-sm {
+            border-radius: 4px;
+            padding: 10px 14px 11px;
+        }
+
+        label > * {
+            display: inline;
+        }
+
+        form > * {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input, select, textarea {
+            border: 1px solid #ccc;
+            padding: 2px;
+        }
+
+            input:focus, select:focus, textarea:focus {
+                border-color: #5ab;
+            }
+
+            input[type=text], textarea {
+                -webkit-appearance: none;
+                width: 100%;
+                outline: 0;
+            }
+
+        .addon {
+            padding: 8px 12px;
+        }
+
+        .table td, .table th {
+            padding: .5em;
+            text-align: left;
+        }
+
+        .table tbody > :nth-child(2n-1) {
+            background: #ddd;
+        }
+
+        .row {
+            overflow: visible;
+            clear: both;
+            height: 32px;
+        }
+
+        .col {
+            float: left;
+        }
+
+        .c12, .table {
+            width: 100%;
+        }
+
+        .c11 {
+            width: 91.66%;
+        }
+
+        .c10 {
+            width: 83.33%;
+        }
+
+        .c9 {
+            width: 75%;
+        }
+
+        .c8 {
+            width: 66.66%;
+        }
+
+        .c7 {
+            width: 58.33%;
+        }
+
+        .c6 {
+            width: 50%;
+        }
+
+        .c5 {
+            width: 41.66%;
+        }
+
+        .c4 {
+            width: 33.33%;
+        }
+
+        .c3andahalf {
+            width: 29.5%;
+        }
+
+        .c3 {
+            width: 25%;
+        }
+
+        .c2 {
+            width: 16.66%;
+        }
+
+        .c1andahalf {
+            width: 12.5%;
+        }
+
+        .c1 {
+            width: 8.33%;
+        }
+
+        @media(max-width:660px) {
+            .row .col {
+                width: 100%;
+            }
+        }
+
+        input, select {
+            box-sizing: border-box;
+            height: 30px;
+        }
+
+        select {
+            -webkit-padding-before: 7px;
+            padding-top: 2px;
+        }
+
+        h1 {
+            background-color: #102840;
+            color: #fff;
+            font-size: 2em;
+            padding: 10px 10px 0 10px;
+            margin: 0;
+        }
+
+        h2 {
+            color: #00b0ca;
+            font-size: 1.5em;
+            margin-top: 35px;
+            clear: both;
+        }
+
+        h3 {
+            color: #00b0ca;
+            clear: both;
+        }
+
+        h6 {
+            background-color: #102840;
+            color: #d2d2d2;
+            font-size: 10px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        body {
+            min-width: 1100px;
+        }
+
+        .container {
+            padding-bottom: 20px;
+        }
+
+        span.addon {
+            display: inline-block;
+            text-align: center;
+            padding-left: 4px;
+            padding-right: 4px;
+            width: 4em;
+            color: #888;
+            text-align: left;
+            font-size: 11px;
+        }
+
+            span.addon.small {
+                width: 1em;
+            }
+
+        select.info {
+            width: 70%;
+        }
+
+        input.info {
+            width: 70%;
+        }
+
+        span.addon.info {
+            width: 22%;
+        }
+
+        p {
+            margin: 4px;
+        }
+
+        .row.low {
+            height: 20px;
+        }
+
+        div.c1, div.c2 {
+            display: table;
+        }
+
+            div.c1 p, div.c2 p {
+                display: table-cell;
+                vertical-align: middle;
+                padding-left: 10px;
+                height: 35px;
+            }
+
+        div.c3, div.c4, div.c9 {
+            padding-left: 1px;
+        }
+
+        .btn {
+            font-size: 1.5em;
+        }
+
+            .btn.btn-sm {
+                font-size: 1.2em;
+            }
+
+        input.short {
+            width: 5.5em;
+        }
+
+        input.medium {
+            width: 7em;
+        }
+
+        input.long {
+            width: 9em;
+        }
+
+        input.longest {
+            width: 17em;
+        }
+
+        input[type=radio] {
+            height: auto;
+            margin-left: 6px;
+        }
+
+        label {
+            font-size: 11px;
+            color: #888;
+            height: auto;
+        }
+
+        .overflowVis {
+            overflow: visible;
+        }
+
+        textarea {
+            width: 50em;
+        }
+
+        .requiredText {
+            font-size: .75em;
+            font-style: italic;
+        }
+
+        input[readonly] {
+            border-top: 0;
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 4px;
+        }
+
+        #emailTextArea {
+            display: none;
+        }
+
+        #content1 {
+            margin-left: 50%;
+        }
+
+        #navbar1 {
+            float: left;
+            width: 50%;
+        }
+
+        .content {
+            padding: 20px;
+            display: inline-block;
+            font-size: 1em;
+        }
+
+        .required {
+            display: inline-block;
+        }
+
+        .required.without-value {
+            border: 1px solid red;
+        }
+
+        .required.with-value {
+            border: 1px solid #ccc;
+        }
+
+        .required-marker {
+            color: red;
+        }
+
+        .ccal {
+            width: 18em;
+            font-size: .8em;
+            margin-bottom: 5px;
+        }
+
+            .ccal ul {
+                margin: 0;
+                padding: 0 !important;
+                text-align: center;
+            }
+
+            .ccal li {
+                list-style-type: none;
+                display: inline-block;
+                width: 13.2%;
+                cursor: pointer;
+                text-align: center;
+                margin: 0;
+            }
+
+                .ccal li span {
+                    display: inline-block;
+                    line-height: 1.8em;
+                }
+
+                .ccal li.calmonth {
+                    width: 66%;
+                }
+
+                .ccal li span {
+                    padding: .1em .05em;
+                    display: block;
+                }
+
+                .ccal li.calnext span, .ccal li.calprev span {
+                    color: #aaa;
+                }
+
+            .ccal .calbody li.selected span {
+                background: #666;
+                color: #fff;
+            }
+
+            .ccal .calbody li.preselected span {
+                background: #f0f0f0;
+            }
+
+            .ccal * {
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+        .today {
+            font-weight: 700;
+        }
+
+        .calendar-canvas {
+            text-align: center;
+            background: #fff;
+            v-moz-box-shadow: 0 3px 4px #999;
+            -moz-box-shadow: 0 3px 4px #999;
+            -webkit-box-shadow: 0 3px 4px #999;
+            box-shadow: 0 1px 2px #999;
+            z-index: 1005;
+        }
+
+        .ar .calweekdays span {
+            font-size: .75em;
+        }
+
+        .info-button {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+            border-radius: 50%;
+            color: #f5f5f5;
+            text-align: center;
+            text-decoration: none;
+            background: #464646;
+            box-shadow: 0 0 3px gray;
+            font-size: 10px;
+            margin: 0 2px;
+        }
+
+            .info-button:hover {
+                background: #0090ff;
+            }
+
+        div[data-tooltip] {
+            position: relative;
+            text-decoration: none;
+            border-bottom: solid 1px;
+        }
+
+            div[data-tooltip]:before {
+                content: "";
+                position: absolute;
+                border-top: 10px solid #0090ff;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                visibility: hidden;
+                top: -15px;
+                left: -5px;
+            }
+
+            div[data-tooltip]:after {
+                content: attr(data-tooltip);
+                font-size: 12px;
+                position: absolute;
+                color: white;
+                top: -35px;
+                left: -26px;
+                background: #0090ff;
+                padding: 5px 15px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                border-radius: 10px;
+                white-space: nowrap;
+                visibility: hidden;
+            }
+
+            div[data-tooltip]:hover:before, div[data-tooltip]:hover:after {
+                visibility: visible;
+                -moz-transition: visibility 0s linear .3s;
+                -webkit-transition: visibility 0s linear .3s;
+                -ms-transition: visibility 0s linear .3s;
+                -o-transition: visibility 0s linear .3s;
+                transition: visibility 0s linear .3s;
+            }
+
+        .tooltip {
+            border-bottom: 1px dotted #000000;
+            color: #f5f5f5;
+            outline: none;
+            cursor: help;
+            text-decoration: none;
+            position: relative;
+
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            line-height: 10px;
+            border-radius: 50%;
+            text-align: center;
+            background: #464646;
+            box-shadow: 0 0 3px grey;
+            font-size: 10px;
+            margin: 0 2px;
+        }
+
+            .tooltip span {
+                margin-left: -999em;
+                position: absolute;
+                background: #0090ff;
+                border: 1px solid #0090ff;
+                padding: 0.8em 1em;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: left;
+                color: #ffffff;
+            }
+
+            .tooltip:hover span {
+                border-radius: 15px 15px;
+                -moz-border-radius: 15px;
+                -webkit-border-radius: 15px;
+                position: absolute;
+                left: 1em;
+                top: 2em;
+                z-index: 99;
+                margin-left: 0;
+                width: 250px;
+            }
+
+        .alert {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            margin: 10px;
+        }
+
+    </style>
+    <script>
+        !function(e,t){if("object"==typeof exports)module.exports=t();else if("function"==typeof define&&define.amd)define(t);else{var n=t();e.CibulCalendar=n.CibulCalendar,e.setCibulCalendar=n.setCibulCalendar}}(this,function(){"use strict";var e="ontouchstart"in window&&!/hp-tablet/gi.test(navigator.appVersion),t=function(e,t){t||(t={}),a(e)&&(s(this,{options:s({init:new Date,range:!1,lang:"en",enabled:!0,firstDayOfWeek:1,selected:!1,filter:!1,template:'<div class="calhead"><ul class="calmonthnav"><li class="calprevmonth"><span>#navprev<\/span><\/li><li class="calmonth"><span class="month">#title<\/span><\/li><li class="calnextmonth"><span>#navnext<\/span><\/li><\/ul><ul class="calweekdays"><li><span>#wd0<\/span><\/li><li><span>#wd1<\/span><\/li><li><span>#wd2<\/span><\/li><li><span>#wd3<\/span><\/li><li><span>#wd4<\/span><\/li><li><span>#wd5<\/span><\/li><li><span>#wd6<\/span><\/li><\/ul><\/div><div class="calbody"><ul><li#cls00><span>#d00<\/span><\/li><li#cls01><span>#d01<\/span><\/li><li#cls02><span>#d02<\/span><\/li><li#cls03><span>#d03<\/span><\/li><li#cls04><span>#d04<\/span><\/li><li#cls05><span>#d05<\/span><\/li><li#cls06><span>#d06<\/span><\/li><\/ul><ul><li#cls07><span>#d07<\/span><\/li><li#cls08><span>#d08<\/span><\/li><li#cls09><span>#d09<\/span><\/li><li#cls10><span>#d10<\/span><\/li><li#cls11><span>#d11<\/span><\/li><li#cls12><span>#d12<\/span><\/li><li#cls13><span>#d13<\/span><\/li><\/ul><ul><li#cls14><span>#d14<\/span><\/li><li#cls15><span>#d15<\/span><\/li><li#cls16><span>#d16<\/span><\/li><li#cls17><span>#d17<\/span><\/li><li#cls18><span>#d18<\/span><\/li><li#cls19><span>#d19<\/span><\/li><li#cls20><span>#d20<\/span><\/li><\/ul><ul><li#cls21><span>#d21<\/span><\/li><li#cls22><span>#d22<\/span><\/li><li#cls23><span>#d23<\/span><\/li><li#cls24><span>#d24<\/span><\/li><li#cls25><span>#d25<\/span><\/li><li#cls26><span>#d26<\/span><\/li><li#cls27><span>#d27<\/span><\/li><\/ul><ul><li#cls28><span>#d28<\/span><\/li><li#cls29><span>#d29<\/span><\/li><li#cls30><span>#d30<\/span><\/li><li#cls31><span>#d31<\/span><\/li><li#cls32><span>#d32<\/span><\/li><li#cls33><span>#d33<\/span><\/li><li#cls34><span>#d34<\/span><\/li><\/ul><ul><li#cls35><span>#d35<\/span><\/li><li#cls36><span>#d36<\/span><\/li><li#cls37><span>#d37<\/span><\/li><li#cls38><span>#d38<\/span><\/li><li#cls39><span>#d39<\/span><\/li><li#cls40><span>#d40<\/span><\/li><li#cls41><span>#d41<\/span><\/li><\/ul><\/div>',classes:s({calendar:"ccal",locale:s({en:"en",fr:"fr",it:"it",es:"es",sv:"sv",no:"no",da:"da",ar:"ar",de:"de"}),navDomPrev:"calprevmonth",navDomNext:"calnextmonth",calendarBody:"calbody",selected:"selected",preSelected:"preselected",today:"today",month:"month",prevMonthDate:"calprev",nextMonthDate:"calnext",disabled:"disabled",originCalendar:"origincal"},t.classes?t.classes:{}),navDomContent:{prev:"<",next:">"},monthNames:s({en:["January","February","March","April","May","June","July","August","September","October","November","December"],fr:["Janvier","F?vrier","Mars","Avril","Mai","Juin","Juillet","Ao?t","Septembre","Octobre","Novembre","D?cembre"],it:["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],es:["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Augosto","Septiembre","Octubre","Noviembre","Diciembre"],sv:["Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"],no:["Januar","Februar","Mars","April","Mai","Juni","Juli","August","September","Oktober","November","Desember"],da:["Januar","Februar","Marts","April","Maj","Juni","Juli","August","September","Oktober","November","December"],ar:["?????","?????","??????","?????","???","?????","?????","???","?????","????","??????","?????"],de:["Januar","Februar","M?rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"]},t.monthNames?t.monthNames:{}),weekDays:s({en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],fr:["Dim","Lun","Mar","Mer","Jeu","Ven","Sam"],it:["Dom","Lun","Mar","Mer","Gio","Ven","Sab"],es:["Dom","Lun","Mar","Mie","Jue","Vie","Sab"],sv:["S?n","M?n","Tid","Ons","Tor","Fre","L?r"],no:["S?n","Man","Tir","Ons","Tor","Fre","L?r"],da:["S?n","Man","Tir","Ons","Tor","Fre","L?r"],ar:["????","?????","??????","??????","???????","????????","??????"],de:["Son","Mon","Die","Mit","Don","Fre","Sam"]},t.weekDays),switchMonthOnHoverDelay:800},t),displayedCalendarElement:!1,preSelection:!1,selecting:!1,element:e}),this.enabled=this.options.enabled,this.setSelected(this.options.selected),this._renderCalendar())};t.prototype={disable:function(){this.enabled=!1,u(i(this.element,this.options.classes.calendar)[0],this.options.classes.disabled)},enable:function(){this.enabled=!0,m(i(this.element,this.options.classes.calendar)[0],this.options.classes.disabled)},showNext:function(){this.enabled&&this._incDisplayedMonth()},showPrevious:function(){this.enabled&&this._decDisplayedMonth()},setSelected:function(e,t){e?("undefined"==typeof e.begin&&(e={begin:e,end:e}),"undefined"==typeof t&&(t=!0),this.selection=e.begin>e.end?{begin:e.end,end:e.begin}:e,this.selection&&t?this._setDisplayedMonth(new Date(this.selection.begin.getTime())):this._renderSelection(this.selection)):(this.selection=!1,this._clearSelectionRender())},_getSelected:function(){return"undefined"==typeof this.selection&&(this.selection=!1),this.selection},_getSelectedElements:function(){return i(i(this.displayedCalendarElement,this.options.classes.calendarBody)[0],this.options.classes.selected)},_applyBehavior:function(){var e=this;o(i(this.displayedCalendarElement,this.options.classes.navDomPrev)[0],"click",function(t){e.showPrevious()}),o(i(this.displayedCalendarElement,this.options.classes.navDomNext)[0],"click",function(t){e.showNext()}),l(i(this.displayedCalendarElement,this.options.classes.calendarBody)[0].getElementsByTagName("li"),function(t){e._applySelectionBehavior(t)}),o(i(this.displayedCalendarElement,this.options.classes.month)[0],"click",function(){e._selectMonth()})},_selectMonth:function(){if(this.enabled&&this.options.range){var e=this._getDisplayedMonth();this.setSelected({begin:new Date(e.getFullYear(),e.getMonth(),1),end:new Date(e.getFullYear(),e.getMonth()+1,0)}),this._renderCalendar(),"undefined"!=typeof this.options.onSelect&&this.options.onSelect(this.selection)}},_applySelectionBehavior:function(e){var t=this;o(e,["touchstart","mousedown"],function(n){!t.selecting&&t.enabled&&(t.selecting=!0,t._beginPreselection(e))}),o(e,["mouseover","touchmove"],function(n){t.selecting&&t.enabled&&t._updatePreselection(t._getActualListItem(e,n))}),o(e,["mouseup","touchend"],function(n){t.selecting&&t.enabled&&(t.selecting=!1,t._completePreselection(e),i(t.element,t.options.classes.originCalendar).length&&t.element.removeChild(i(t.element,t.options.classes.originCalendar)[0]))})},_preventDefaultBodyMove:function(e){e.preventDefault&&e.preventDefault()},_beginPreselection:function(t){e&&o(document.getElementsByTagName("body")[0],"touchmove",this._preventDefaultBodyMove),this.selection=!1,this.currentListItem=t,this.anchorDate=this._getDateFromElement(t),this.preSelection={begin:this.anchorDate,end:this.anchorDate},this._renderSelection(this.preSelection,!0)},_updatePreselection:function(e){if(this.currentListItem!=e){this.currentListItem=e;var t=this._getDateFromElement(e);this.options.range?this.preSelection=t<this.anchorDate?{begin:t,end:this.anchorDate}:{begin:this.anchorDate,end:t}:this.preSelection={begin:t,end:t},this._switchMonthOnTimer(e,t),this._renderSelection(this.preSelection,!0)}},_completePreselection:function(t){e&&document.getElementsByTagName("body")[0].removeEventListener("touchmove",this._preventDefaultBodyMove,!1),this.currentListItem=!1,this.setSelected(this.preSelection,!1),this._renderSelection(this.selection),this.preSelection=!1,"undefined"!=typeof this.options.onSelect&&this.options.onSelect(this.options.range?this.selection:this.selection.begin),this._clearHoverTimer()},_switchMonthOnTimer:function(e,t){var n=!1,s=this,i=s._getDisplayedMonth().getMonth()==t.getMonth();switch(d(e.parentNode)){case 0:0!==d(e)&&i||(n="prev");break;case 4:i||(n="next");break;case 5:6!=d(e)&&i||(n="next")}n?"undefined"==typeof this.hoverTimer&&(this.hoverTimer=setTimeout(function(){"next"==n?s.showNext():"prev"==n&&s.showPrevious(),s._clearHoverTimer()},this.options.switchMonthOnHoverDelay)):this._clearHoverTimer()},_clearHoverTimer:function(){this.hoverTimer&&clearTimeout(this.hoverTimer),this.hoverTimer=void 0},_getDateFromElement:function(e){var t=d(e.parentNode),n=0,s=parseInt(e.getElementsByTagName("span")[0].innerHTML,10),i=this._getDisplayedMonth();return 0===t&&s>10&&(n=-1),t>=4&&12>s&&(n=1),new Date(i.getFullYear(),i.getMonth()+n,s)},_incDisplayedMonth:function(){var e=this._getDisplayedMonth();e.setMonth(e.getMonth()+1),this._setDisplayedMonth(e)},_decDisplayedMonth:function(){var e=this._getDisplayedMonth();e.setMonth(e.getMonth()-1),this._setDisplayedMonth(e)},_setDisplayedMonth:function(e){this.displayedMonth=e,this._renderCalendar()},_getDisplayedMonth:function(){return"undefined"==typeof this.displayedMonth&&(this.displayedMonth=this.options.init),this.displayedMonth},_clearSelectionRender:function(){var e=this;this.displayedCalendarElement&&l(i(i(this.displayedCalendarElement,this.options.classes.calendarBody)[0],this.options.classes.selected),function(t){m(t,e.options.classes.selected)})},_renderSelection:function(e,t){if(this.displayedCalendarElement){var n,s=!1,a=0,o=this,r=o._getDisplayedMonth().getMonth();t="undefined"==typeof t?!1:t,l(i(this.displayedCalendarElement,this.options.classes.calendarBody)[0].getElementsByTagName("li"),function(i){n=[],s?s.setDate(s.getDate()+1):s=o._getDateFromElement(i),o._isWithinRange(s,e)&&n.push(t?o.options.classes.preSelected:o.options.classes.selected),o._isToday(s)&&n.push(o.options.classes.today),s.getMonth()!=r&&n.push(o.options.classes[a++<7?"prevMonthDate":"nextMonthDate"]),o.options.filter&&(n=o.options.filter(s,n)),i.className=n.join(" ")})}},_generateCalendarHTML:function(e){var t,n,s,i=this.options.template,a=0,l=this._getSelected(),o=this._getMonthStack(e.getMonth(),e.getFullYear());for(t=0;t<o.length;t++){n=new RegExp("#d"+(t>9?"":"0")+t),i=i.replace(n,o[t]);var r=parseInt(o[t],10),c=[];n=new RegExp("#cls"+(t>9?"":"0")+t),a=0,7>t&&r>10?(c.push(this.options.classes.prevMonthDate),a=-1):t>27&&13>r&&(c.push(this.options.classes.nextMonthDate),a=1),s=new Date(e.getFullYear(),e.getMonth()+a,r),l&&this._isWithinRange(s,l)&&c.push(this.options.classes.selected),this._isToday(s)&&c.push(this.options.classes.today),this.options.filter&&this.options.filter(s,c),i=i.replace(n,c.length?' class="'+c.join(" ")+'"':"")}for(t=0;7>t;t++)n=new RegExp("#wd"+t),i=i.replace(n,this.options.weekDays[this.options.lang][(t+this.options.firstDayOfWeek)%7]);return i=i.replace("#title",this.options.monthNames[this.options.lang][e.getMonth()]+" "+e.getFullYear()),i=i.replace("#navprev",this.options.navDomContent.prev).replace("#navnext",this.options.navDomContent.next)},_renderCalendar:function(){var e=this._getDisplayedMonth();if(this.selecting){if(e.getMonth()==this.anchorDate.getMonth()&&e.getFullYear()==this.anchorDate.getFullYear()&&i(this.element,this.options.classes.originCalendar).length)return this.element.removeChild(i(this.element,this.options.classes.calendar)[0]),i(this.element,this.options.classes.originCalendar)[0].setAttribute("style","display:block;"),void(i(this.element,this.options.classes.originCalendar)[0].className=this.options.classes.calendar);i(this.element,this.options.classes.originCalendar).length?this.element.removeChild(i(this.element,this.options.classes.calendar)[0]):(i(this.element,this.options.classes.calendar)[0].setAttribute("style","display:none;"),i(this.element,this.options.classes.calendar)[0].className=this.options.classes.originCalendar)}else i(this.element,this.options.classes.calendar).length&&this.element.removeChild(i(this.element,this.options.classes.calendar)[0]);var t=document.createElement("div");t.className=this.options.classes.calendar+" "+this.options.classes.locale[this.options.lang],t.innerHTML=this._generateCalendarHTML(e),this.element.appendChild(t),this.displayedCalendarElement=i(this.element,this.options.classes.calendar)[0],c(this.element),this._applyBehavior()},_getMonthStack:function(e,t){var n,s=[],i=new Date(t,e+1,0);for(n=i.getDate();n--;)s.unshift((n+1).toString());i=new Date(t,e,1);var a=(i.getDay()-this.options.firstDayOfWeek)%7;for(a=0>a?a+7:a;a--;)i.setDate(i.getDate()-1),s.unshift(i.getDate().toString());for(i=new Date(t,e+1,0);s.length<42;)i.setDate(i.getDate()+1),s.push(i.getDate().toString());return s},_isToday:function(e){return"undefined"==typeof this.today&&(this.today=(new Date).toDateString()),e.toDateString()==this.today},_isWithinRange:function(e,t){var n=e.toDateString(),s={begin:t.begin.toDateString(),end:t.end.toDateString()};return n==s.begin||n==s.end?!0:e>=t.begin&&e<=t.end?!0:!1},_getActualListItem:function(e,t){return"undefined"==typeof t?e:"undefined"==typeof t.touches?e:f(t.touches[0].pageX,t.touches[0].pageY).parentNode}};var n=function(e,n){var i,a=document.getElementById(e),l=!1,c=function(){n=s({onSelect:u,separator:" - ",canvasClass:"calendar-canvas",offset:{top:5,left:0}},n?n:{}),o(a,"click",p),o(document.getElementsByTagName("body")[0],"click",function(){l||d(),l=!1})},p=function(){l=!0,i||h(),s(i.style,{position:"absolute",top:a.offsetTop+a.offsetHeight+n.offset.top+"px",left:a.offsetLeft+n.offset.left+"px"}),i.style.display="block",a.blur()},d=function(){i&&(i.style.display="none")},h=function(){i=document.createElement("div"),i.className=n.canvasClass,a.parentNode.style.position||(a.parentNode.style.position="relative"),i.style.position="absolute",o(i,"click",p),a.parentNode.appendChild(i),new t(i,n)},u=function(e){a.value=e.begin?m(e.begin)+(e.begin!=e.end?n.separator+m(e.end):""):m(e),r(a,"change"),setTimeout(d,200)},m=function(e){return e.getFullYear()+"-"+g(e.getMonth()+1)+"-"+g(e.getDate())},g=function(e){return(e>9?"":"0")+e};c()},s=function(){for(var e=1;e<arguments.length;e++)for(var t in arguments[e])arguments[e].hasOwnProperty(t)&&(arguments[0][t]=arguments[e][t]);return arguments[0]},i=function(e,t){for(var n=[],s=new RegExp("(^| )"+t+"( |$)"),i=e.getElementsByTagName("*"),a=0,l=i.length;l>a;a++)s.test(i[a].className)&&n.push(i[a]);return n},a=function(e){return"object"==typeof HTMLElement?e instanceof HTMLElement:e&&"object"==typeof e&&1===e.nodeType&&"string"==typeof e.nodeName},l=function(e,t){for(var n=0;n<e.length;n++)t(e[n])},o=function(e,t,n){null!==e&&void 0!==e&&("string"==typeof t&&(t=[t]),l(t,function(t){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}))},r=function(e,t){null!==e&&void 0!==e&&("string"==typeof t&&(t=[t]),l(t,function(t){if("fireEvent"in e)e.fireEvent("on"+t);else{var n=document.createEvent("HTMLEvents");n.initEvent(t,!1,!0),e.dispatchEvent(n)}}))},c=function(e){1==e.nodeType&&e.setAttribute("unselectable","on");for(var t=e.firstChild;t;)c(t),t=t.nextSibling},p=function(e){for(e=e.previousSibling;e&&1!=e.nodeType;)e=e.previousSibling;return e},d=function(e){for(var t=0;null!==(e=p(e));)t++;return t},h=function(e,t){return(" "+e.className+" ").indexOf(" "+t+" ")>-1},u=function(e,t){h(e,t)||(e.className=e.className+" "+t)},m=function(e,t){if(h(e,t)){var n=new RegExp(t,"g");e.className=e.className.replace(n,"")}},g=function(){return window.pageYOffset>0?null===window.document.elementFromPoint(0,window.pageYOffset+window.innerHeight-1):window.pageXOffset>0?null===window.document.elementFromPoint(window.pageXOffset+window.innerWidth-1,0):!1},f=function(e,t){return g()?window.document.elementFromPoint(e-window.pageXOffset,t-window.pageYOffset):window.document.elementFromPoint(e,t)};return{CibulCalendar:t,setCibulCalendar:n}});
+    </script>
+    <script>
+        if (typeof module !== 'undefined') {
+            module.exports.isValidDate = isValidDate;
+        }
+
+        function updateInput(el) {
+            if(el.value == "") {
+                el.className = el.className.replace(" with-value", " without-value");
+            }
+            else {
+                el.className += " with-value";
+                el.className = el.className.replace(" without-value", " with-value");
+            }
+        }
+
+        function doLoad() {
+            setCibulCalendar('posDate'); // will stick to element <input type="text" id="posDate"/>
+            setCibulCalendar('etaDate');
+        }
+
+        if (typeof window !== 'undefined') {
+            if (window.addEventListener) {
+                window.addEventListener("load", doLoad, false);
+            }
+            else if (window.attachEvent) {
+                window.attachEvent("onload", doLoad);
+            } else if (window.onLoad) {
+                window.onload = doLoad;
+            }
+        }
+
+        var dataModel = {
+            name: '',
+            latDeg: NaN,
+            latMin: 0,
+            latSec: 0,
+            latDir: '',
+            lonDeg: NaN,
+            lonMin: 0,
+            lonSec: 0,
+            lonDir: ''
+        };
+
+        function readBunkerStore(form, storeType) {
+            if(typeof form[storeType + 'Hfo'] != 'undefined')
+                dataModel[storeType].hfo = form[storeType + 'Hfo'].value;
+
+            if(typeof form[storeType + 'HfoLs'] != 'undefined')
+                dataModel[storeType].hfoLs = form[storeType + 'HfoLs'].value;
+
+            if(typeof form[storeType + 'Mdo'] != 'undefined')
+                dataModel[storeType].mdo = form[storeType + 'Mdo'].value;
+
+            if(typeof form[storeType + 'MdoLs'] != 'undefined')
+                dataModel[storeType].mdoLs = form[storeType + 'MdoLs'].value;
+
+            if(typeof form[storeType + 'Mgo'] != 'undefined')
+                dataModel[storeType].mgo = form[storeType + 'Mgo'].value;
+
+            if(typeof form[storeType + 'MgoLs'] != 'undefined')
+                dataModel[storeType].mgoLs = form[storeType + 'MgoLs'].value;
+
+            if(typeof form[storeType + 'MgoUls'] != 'undefined')
+                dataModel[storeType].mgoUls = form[storeType + 'MgoUls'].value;
+
+            if(typeof form[storeType + 'Lng'] != 'undefined')
+                dataModel[storeType].lng = form[storeType + 'Lng'].value;
+
+            if(typeof form[storeType + 'Fresh'] != 'undefined')
+                dataModel[storeType].fresh = form[storeType + 'Fresh'].value;
+        }
+
+        function readInData(dataModel) {
+
+            // read data from the DOM into the data model
+            var form = document.forms[0];
+            dataModel.name = form.name.value;
+            dataModel.callsign = form.callsign.value;
+            dataModel.shipId = form.shipId.value;
+            dataModel.imo = form.imo.value;
+            dataModel.from = form.from.value;
+            dataModel.dest = form.dest.value;
+
+            dataModel.latDeg = form.latDeg.value;
+            dataModel.latMin = form.latMin.value;
+            dataModel.latSec = form.latSec.value;
+            dataModel.latDir = form.latDir.options[form.latDir.selectedIndex].text;
+
+            dataModel.lonDeg = form.lonDeg.value;
+            dataModel.lonMin = form.lonMin.value;
+            dataModel.lonSec = form.lonSec.value;
+            dataModel.lonDir = form.lonDir.options[form.lonDir.selectedIndex].text;
+
+            dataModel.posDate = form.positionDate.value;
+            dataModel.posTime = form.positionTime.value;
+            dataModel.typeText = form.type.options[form.type.selectedIndex].text;
+            dataModel.typeValue = form.type.value;
+            dataModel.sailingIn = form.sailingIn.options[form.sailingIn.selectedIndex].value;
+
+            dataModel.comments = form.comments.value;
+
+            dataModel.voyageCustomReferenceId = form.voyageCustomReferenceId.value;
+            dataModel.shipCustomReferenceId = form.shipCustomReferenceId.value;
+            dataModel.customerCustomReferenceId = form.customerCustomReferenceId.value;
+
+                    dataModel.etaDate = form.etaDate.value;
+                                                                                dataModel.etaTime = form.etaTime.value;
+                    dataModel.VoyageId = form.VoyageId.value;
+                    dataModel.LegId = form.LegId.value;
+
+                dataModel.Generator1hrs = form.Generator1hrs.value;
+                                        dataModel.Generator2hrs = form.Generator2hrs.value;
+                                        dataModel.Generator3hrs = form.Generator3hrs.value;
+                                        dataModel.Generator4hrs = form.Generator4hrs.value;
+
+                dataModel.Generator1kwhrs = form.Generator1kwhrs.value;
+                                        dataModel.Generator2kwhrs = form.Generator2kwhrs.value;
+                                        dataModel.Generator3kwhrs = form.Generator3kwhrs.value;
+                                        dataModel.Generator4kwhrs = form.Generator4kwhrs.value;
+
+                dataModel.AE1 = form.AE1.value;
+                                        dataModel.AE2 = form.AE2.value;
+                                        dataModel.AE3 = form.AE3.value;
+                                        dataModel.AE4 = form.AE4.value;
+
+                dataModel.SpeedComb = form.SpeedComb.value;
+                dataModel.Condition = form.Condition.value;
+                dataModel.Cargo = form.Cargo.value;
+                dataModel.FwdDraft = form.FwdDraft.value;
+                dataModel.AftDraft = form.AftDraft.value;
+                dataModel.GM = form.GM.value;
+                dataModel.BallastWater = form.BallastWater.value;
+                dataModel.MELoad = form.MELoad.value;
+                dataModel.MERevolutions = form.MERevolutions.value;
+                dataModel.MEKwhrs = form.MEKwhrs.value;
+                dataModel.AverageBHP = form.AverageBHP.value;
+                dataModel.ShaftTorque = form.ShaftTorque.value;
+                dataModel.ObsDist = form.ObsDist.value;
+                dataModel.EngDist = form.EngDist.value;
+                dataModel.SurfaceLogDistance = form.SurfaceLogDistance.value;
+                dataModel.LogSpeed = form.LogSpeed.value;
+                dataModel.MilesToGo = form.MilesToGo.value;
+                dataModel.SteamingTime = form.SteamingTime.value;
+                dataModel.StoppedTime = form.StoppedTime.value;
+                dataModel.PropellorPitch = form.PropellorPitch.value;
+                dataModel.Slip = form.Slip.value;
+                dataModel.Sludge = form.Sludge.value;
+                dataModel.CylinderOilCons = form.CylinderOilCons.value;
+                dataModel.SystemOilConsME = form.SystemOilConsME.value;
+                dataModel.GenHours = form.GenHours.value;
+                dataModel.BoilerHours = form.BoilerHours.value;
+                dataModel.IncineratorHours = form.IncineratorHours.value;
+                dataModel.ShaftGenHours = form.ShaftGenHours.value;
+                dataModel.ShaftGenKwhrs = form.ShaftGenKwhrs.value;
+                dataModel.ReeferPlugs = form.ReeferPlugs.value;
+                dataModel.AverageRPM = form.AverageRPM.value;
+
+                    dataModel.WindDir = form.WindDir.options[form.WindDir.selectedIndex].value;
+                 dataModel.Wind = form.Wind.value.replace(/\s/g, '');
+                    dataModel.windUnit = (document.getElementById('obsWindRadioKts').checked) ? 'kts' : 'bft';
+                 dataModel.Sea = form.Sea.value.replace(/\s/g, '');
+                    dataModel.SwellDir = form.SwellDir.options[form.SwellDir.selectedIndex].value;
+                 dataModel.Swell = form.Swell.value.replace(/\s/g, '');
+                    dataModel.CurrentDir = form.CurrentDir.options[form.CurrentDir.selectedIndex].value;
+                 dataModel.Current = form.Current.value.replace(/\s/g, '');
+
+                dataModel.MainEngine = { };
+                                        readBunkerStore(form, 'MainEngine');
+                dataModel.AuxEngines = { };
+                                        readBunkerStore(form, 'AuxEngines');
+                dataModel.Boiler = { };
+                                        readBunkerStore(form, 'Boiler');
+                dataModel.Hold = { };
+                                        readBunkerStore(form, 'Hold');
+                dataModel.TankHeating = { };
+                                        readBunkerStore(form, 'TankHeating');
+                dataModel.Bunkered = { };
+                                        readBunkerStore(form, 'Bunkered');
+                dataModel.ROB = { };
+                                        readBunkerStore(form, 'ROB');
+        }
+
+        function inRange(num, minRange, maxRange) {
+            var int = parseFloat(num);
+            return parseFloat(minRange) <= int && int <= parseFloat(maxRange);
+        }
+
+        function isInteger(x) {
+            var regex=/^[-+]?\d+(.\d{1,4})?$/;
+            return (x.match(regex));
+        }
+        
+        function isPositiveInteger(x) {
+            var regex=/^\d+(.\d{1,4})?$/;
+            return (x.match(regex));
+        }
+
+        function integerInRange(num, minRange, maxRange) {
+
+            // integer ?
+            if (minRange < 0)
+            {
+                if (!isInteger(num))
+                    return false;
+            }
+            else if (!isInteger(num))
+            {
+                return false;
+            }
+            else // must be positive
+            {
+                if (!isPositiveInteger(num))
+                    return false;
+            }
+
+            // in range ?
+            if (!inRange(num, minRange, maxRange))
+                return false;
+
+            return true;
+        }
+
+        function isEmpty(obj) {
+            for (var prop in obj) {
+                if (Object.prototype.hasOwnProperty.call(obj, prop))
+                    return false;
+            }
+
+            return true;
+        }
+
+        function isValidDate(dateString) {
+            var matches = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(dateString);
+            if (matches === null) return false;
+            var y = matches[1];
+            if (y < 2015 || y > 2100) return false; // hopefully easy noon won't be used after the year 2100
+            var m = matches[2] - 1;
+            var d = matches[3];
+            var composedDate = new Date(y, m, d);
+            return composedDate.getDate() == d &&
+                    composedDate.getMonth() == m &&
+                    composedDate.getFullYear() == y;
+        }
+
+        function isValidTime(timeString)
+        {
+            var matches = /^([0-9]{2}):([0-9]{2})$/.exec(timeString);
+            if (matches === null)
+                return false;
+
+            var validTimeHour = inRange(matches[1], 0, 23);
+            var validTimeMin = inRange(matches[2], 0, 59);
+            if ((!validTimeHour) | (!validTimeMin))
+                return false;
+
+            return true;
+        }
+
+        function validateData() {
+            var errorMsg = "";
+            var form = document.forms[0];
+
+            //CHeck lat/lon
+             if(form.latDir.options[form.latDir.selectedIndex].text == "")
+             {
+                    errorMsg += "Lat. hemisphere is required\n";
+            }
+    
+             if(form.lonDir.options[form.lonDir.selectedIndex].text == "")
+            {
+                    errorMsg += "Lon. hemisphere is required\n";
+             }
+
+            //Check required fields
+            var requiredFields = document.querySelectorAll('[required]');
+            for(var i = 0; i < requiredFields.length; i++)
+            {
+                if(requiredFields[i].value == "")
+                    errorMsg += requiredFields[i].dataset.description + " is required\n";
+            }
+
+            var minFields = document.querySelectorAll('[min]');
+            for(var i = 0; i < minFields.length; i++)
+            {
+                if(minFields[i].value == "")
+                {
+                    continue;
+                }
+
+                if(!isNaN(parseFloat(minFields[i].value,10)))
+                {
+                    minFields[i].value = parseFloat(minFields[i].value,10);
+                }
+                else
+                {
+                    errorMsg += minFields[i].dataset.description + " must be a float value \n";
+                    continue;
+                }
+                
+                if (!integerInRange(minFields[i].value, minFields[i].min, minFields[i].max))
+                {
+                    errorMsg += minFields[i].dataset.description + " must be a value between " + minFields[i].min + " and " + minFields[i].max + "\n";
+                }
+            }
+
+
+
+            // check format of filled in dates and times
+            var positionDateVal = {domObj: form.positionDate, value: dataModel.posDate, msg:'Invalid date. Example of valid date -  2015-03-25', required:'true'};
+            var positionTimeVal = {domObj: form.positionTime, value: dataModel.posTime, msg:'Invalid time. Example of valid time -  12:30'};
+
+            var dates = [positionDateVal];
+            var times = [positionTimeVal];
+
+            for (i = 0; i < dates.length; i++)
+            {
+                if (dates[i].required != 'true' && dates[i].value === '' && times[i].value === '')
+                    continue;
+
+                var validDate = isValidDate(dates[i].value);
+                if (!validDate)
+                {
+                    errorMsg +=  dates[i].msg + "\n";
+                }
+
+                var validTime = isValidTime(times[i].value);
+                if (!validTime)
+                {
+                    errorMsg += times[i].msg + "\n";
+                }
+            }
+
+            var dataOk = (errorMsg === "");
+            if (!dataOk) {
+                alert(errorMsg);
+            }
+
+            return dataOk;
+        }
+
+        function Submit(type) {
+            readInData(dataModel);
+            if (!validateData()) {
+                return;
+            }
+
+            SendMail(type);
+        }
+
+        function SendMail(type) {
+            var boilerHours = 0;
+            var incineratorHours = 0;
+            var genHours = 0;
+            var fwdDraft = 0;
+            var aftDraft = 0;
+
+            if(dataModel.Genhours != 'undefined')
+                genHours = dataModel.GenHours;
+
+            if(dataModel.BoilerHours != 'undefined')
+                boilerHours = dataModel.BoilerHours;
+
+            if(dataModel.IncineratorHours != 'undefined')
+                incineratorHours = dataModel.IncineratorHours;
+
+            if(dataModel.FwdDraft != 'undefined')
+                fwdDraft = dataModel.FwdDraft;
+
+            if(dataModel.AftDraft != 'undefined')
+                aftDraft = dataModel.AftDraft;
+
+            var subject = dataModel.typeText + " from: " + dataModel.callsign + " " + getFormattedDate(new Date());
+            var emailBody = formatLine(dataModel.typeText) +
+            formatLine("Please do not modify this message!") +
+            formatLine("<STX>") +
+            formatValueLine("Id", dataModel.shipId + "@" + dataModel.callsign) +
+            formatValueLine("IMO", dataModel.imo) +
+            formatValueLine("Name", dataModel.name) +
+            formatValueLineNE("Lat", getCoord(dataModel.latDeg, dataModel.latMin, dataModel.latSec, dataModel.latDir)) +
+            formatValueLineNE("Lon", getCoord(dataModel.lonDeg, dataModel.lonMin, dataModel.lonSec, dataModel.lonDir)) +
+            formatValueLine("Date", getDateTime(dataModel.posDate, dataModel.posTime)) +
+            formatValueLine("Type", dataModel.typeValue) +
+            formatValueLine("SailingIn", dataModel.sailingIn) +
+            formatValueLine("From", dataModel.from) +
+            formatValueLine("Dest", dataModel.dest) +
+
+            formatValueLine("Hours", getSeperatedFields(boilerHours, incineratorHours, genHours)) +
+            formatValueLine("Draft", getSeperatedFields(fwdDraft, aftDraft)) +
+
+                formatValueLine("GenHours", getSeperatedFields(dataModel.Generator1hrs, dataModel.Generator2hrs, dataModel.Generator3hrs, dataModel.Generator4hrs)) +
+
+               formatValueLine("GenKwhrs", getSeperatedFields(dataModel.Generator1kwhrs, dataModel.Generator2kwhrs, dataModel.Generator3kwhrs, dataModel.Generator4kwhrs)) +
+
+                formatValueLine("SystemOilConsAE", getSeperatedFields(dataModel.AE1, dataModel.AE2, dataModel.AE3, dataModel.AE4)) +
+
+                formatValueLine("SpeedComb", dataModel.SpeedComb) +
+                formatValueLine("Condition", dataModel.Condition) +
+                formatValueLine("Cargo", dataModel.Cargo) +
+                formatValueLine("GM", dataModel.GM) +
+                formatValueLine("BallastWater", dataModel.BallastWater) +
+                formatValueLine("MELoad", dataModel.MELoad) +
+                formatValueLine("MERevolutions", dataModel.MERevolutions) +
+                formatValueLine("MEKwhrs", dataModel.MEKwhrs) +
+                formatValueLine("AverageBHP", dataModel.AverageBHP) +
+                formatValueLine("ShaftTorque", dataModel.ShaftTorque) +
+                formatValueLine("ObsDist", dataModel.ObsDist) +
+                formatValueLine("EngDist", dataModel.EngDist) +
+                formatValueLine("SurfaceLogDistance", dataModel.SurfaceLogDistance) +
+                formatValueLine("LogSpeed", dataModel.LogSpeed) +
+                formatValueLine("MilesToGo", dataModel.MilesToGo) +
+                formatValueLine("SteamingTime", dataModel.SteamingTime) +
+                formatValueLine("StoppedTime", dataModel.StoppedTime) +
+                formatValueLine("PropellorPitch", dataModel.PropellorPitch) +
+                formatValueLine("Slip", dataModel.Slip) +
+                formatValueLine("Sludge", dataModel.Sludge) +
+                formatValueLine("CylinderOilCons", dataModel.CylinderOilCons) +
+                formatValueLine("SystemOilConsME", dataModel.SystemOilConsME) +
+                formatValueLine("ShaftGenHours", dataModel.ShaftGenHours) +
+                formatValueLine("ShaftGenKwhrs", dataModel.ShaftGenKwhrs) +
+                formatValueLine("ReeferPlugs", dataModel.ReeferPlugs) +
+                formatValueLine("AverageRPM", dataModel.AverageRPM) +
+
+
+                    formatValueLine("Eta", getDateTime(dataModel.etaDate, dataModel.etaTime)) +
+                    formatValueLine("VoyageId", dataModel.VoyageId) +
+                    formatValueLine("LegId", dataModel.LegId) +
+
+                    formatValueLine("Wind", getSeperatedFields(dataModel.WindDir, dataModel.Wind + dataModel.windUnit)) +
+                    formatValueLine("Sea", dataModel.Sea) +
+                    formatValueLine("Swell", getSeperatedFields(dataModel.SwellDir, dataModel.Swell)) +
+                    formatValueLine("Current", getSeperatedFields(dataModel.CurrentDir, dataModel.Current)) +
+
+                formatValueLine("MainEngine", getFormattedBunker(dataModel.MainEngine)) +
+                formatValueLine("AuxEngines", getFormattedBunker(dataModel.AuxEngines)) +
+                formatValueLine("Boiler", getFormattedBunker(dataModel.Boiler)) +
+                formatValueLine("Hold", getFormattedBunker(dataModel.Hold)) +
+                formatValueLine("TankHeating", getFormattedBunker(dataModel.TankHeating)) +
+                formatValueLine("Bunkered", getFormattedBunker(dataModel.Bunkered)) +
+                formatValueLine("ROB", getFormattedBunker(dataModel.ROB)) +
+
+            formatValueLine("ShipRef", dataModel.shipCustomReferenceId) +
+            formatValueLine("CustomerRef", dataModel.customerCustomReferenceId) +
+            formatValueLine("Comment", replaceLineBreaks(dataModel.comments)) +
+            formatLine("Version:4.0.0") +
+            "<ETX>";
+
+            var emailText = "mailto:report@routeguard.eu?subject=" + subject + "&body=" + emailBody;
+
+            if (type === 'text') {
+                var emailTextArea = document.getElementById('emailTextArea');
+                var instructions = "Copy and paste the text below\r\nEmail to report@routeguard.eu\r\n-----------------\r\n";
+                var decodedBody = decodeURIComponent(emailBody);
+                if (emailTextArea.textContent === undefined) {
+                    emailTextArea.innerText = instructions + decodedBody;
+                } else {
+                    emailTextArea.textContent = instructions + decodedBody;
+                }
+
+                emailTextArea.style.display = 'block';
+                emailTextArea.focus();
+            } else {
+                window.location = emailText;
+            }
+        }
+
+        function replaceLineBreaks(text)
+        {
+            // taken from http://www.textfixer.com/tutorials/javascript-line-breaks.php
+            return text.replace(/(\r\n|\n|\r)/gm,"||");
+        }
+
+        function getSeperatedFields(){
+            var hasData = false;
+            var blkstr = [];
+            for (var i = 0; i < arguments.length; i++) {
+                if(!(arguments[i] === '')){
+                    hasData = true;
+                }
+                blkstr.push(arguments[i]);
+            }
+
+            if(hasData)
+            {
+
+                return blkstr.join('/');
+            }
+
+            return "";
+        }
+
+        function getDateTime(date, time) {
+            if(!(time==='')) {
+                return date + " " + time;
+            }
+            return date;
+        }
+
+        function getFormattedBunker(store) {
+            return getSeperatedFields(
+              store.hfo,
+              store.hfoLs,
+              store.mdo,
+              store.mdoLs,
+              store.mgo,
+              store.mgoLs,
+              store.mgoUls,
+              store.lng,
+              store.fresh);
+        }
+
+        function getCoord(degree, minute, second, direction) {
+            var coordNum = ((parseInt(degree,10) * 60 * 60) +
+            (parseInt(minute,10) * 60) +
+            (parseInt(second,10)));
+            if (direction === 'S' || direction === 'W') {
+                coordNum = -coordNum;
+            }
+
+            return (coordNum + " (" + degree + urlDeg() + " " + minute + "' " + second + "''" + direction + ")");
+        }
+
+        function urlDeg() {
+            // the degree symbol ï¿½ (alt+248) is encoded like this for POSTing URLs
+            return "%C2%B0";
+        }
+
+        function getFormattedDate(theDate) {
+            var dd = theDate.getDate();
+            var mm = theDate.getMonth() + 1; //January is 0!
+
+            var yyyy = theDate.getFullYear();
+            if (dd < 10) { dd = '0' + dd; }
+
+            if (mm < 10) { mm = '0' + mm; }
+
+            return "(" + mm + '-' + dd + '-' + yyyy + " " + theDate.getHours() + ":" + theDate.getMinutes() + ")";
+        }
+
+        function formatLine(value) {
+            return encodeURIComponent(value + '\n');
+        }
+
+        function formatValueLineNE(name, value) {
+            if(!(value === '')){
+                return name + ":" + value + encodeURIComponent('\n');
+            }
+            return "";
+        }
+
+        function formatValueLine(name, value) {
+            if(!(value === '')){
+                return name + ":" + encodeURIComponent(value + '\n');
+            }
+            return "";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="split-header">MeteoGroup EasyNoon</h1>
+        <h6>Ship: Asian Jasper Imo: 9395379 Ship Ref:  Customer Ref: </h6>
+
+        <noscript>
+            <div class="alert">
+                <strong>Attention!</strong> Please enable JavaScript in your browser.
+            </div>
+        </noscript>
+
+        <form>
+            <input name="shipId" type="hidden" value="1027">
+            <input name="callsign" type="hidden" value="HONO">
+            <input name="imo" type="hidden" value="9395379">
+            <input name="name" type="hidden" value="Asian Jasper">
+            <input name="voyageCustomReferenceId" type="hidden" value="Asian Jasper">
+            <input name="shipCustomReferenceId" type="hidden">
+            <input name="customerCustomReferenceId" type="hidden">
+
+            <h2>Voyage</h2>
+
+            <div class="row">
+                <div class="col c1">
+                    <p>From<span class="required-marker">*</span></p>
+                </div>
+
+                <div class="col c3">
+                    <input class="info required" name="from" data-description="From" required="" onchange="updateInput(this)">
+                </div>
+
+                <div class="col c1">
+                    <p>Destination<span class="required-marker">*</span></p>
+                </div>
+
+                <div class="col c3">
+                    <input class="info required" name="dest" data-description="Destination" required=""  onchange="updateInput(this)">
+                </div>
+            </div>
+
+                    <div class="row">
+                <div class="col c1">
+                    <p>ETA<span class="required-marker">*</span></p>
+                </div>
+                    <div class="col c3">
+                        <input placeholder="YYYY-MM-DD" type="text" class="long required" name="etaDate" id="etaDate" onchange="updateInput(this)">
+                        <input placeholder="HH:MM" name="etaTime" class="short required" maxlength="5" onchange="updateInput(this)"><span class="addon wide" >UTC</span>
+                    </div>
+                <div class="col c1">
+                    <p>Voyage No</p>
+                </div>
+                    <div class="col c3">
+                        <input class="info " name="VoyageId" data-description="Voyage No" maxlength="6" type="number"><span class="addon info"></span>
+                    </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1">
+                    <p>Leg No</p>
+                </div>
+                    <div class="col c3">
+                        <input class="info " name="LegId" data-description="Leg No" maxlength="6" type="number"><span class="addon info"></span>
+                    </div>
+                    </div>
+
+            <h3>Position</h3>
+            <div class="row">
+                <div class="col c1">
+                    <p>Type</p>
+                </div>
+                <div class="col c2">
+                    <select name="type">
+                        <option value="6">
+                            Start of sea passage (start of voyage)
+                        </option>
+                        <option value="7">
+                            Start of Sea Passage (voyage continuation)
+                        </option>
+                        <option selected="selected" value="2">
+                            Position update (at sea / in port)
+                        </option>
+                        <option value="8">
+                            End of sea passage (voyage continuation)
+                        </option>
+                        <option value="9">
+                            End of sea passage (end of voyage)
+                        </option>
+                        <option value="4">
+                            Berthing
+                        </option>
+                        <option value="5">
+                            Unberthing
+                        </option>
+                    </select>
+                </div>
+                <div class="col c1">
+                    <p>Sailing in</p>
+                </div>
+                <div class="col c2">
+                    <select name="sailingIn">
+                        <option selected="selected" value="3">
+                            Non ECA
+                        </option>
+                        <option value="2">
+                            Fuel ChangeOver
+                        </option>
+                        <option value="1">
+                            ECA
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col c1">
+                    <p>Date<span class="required-marker">*</span></p>
+                </div>
+                <div class="col c3">
+                    <input class="long required" id="posDate" name="positionDate" placeholder="YYYY-MM-DD" type="text" onchange="updateInput(this)">
+                    <input class="short required" maxlength="5" name="positionTime" placeholder="HH:MM" onchange="updateInput(this)"><span class="addon wide">UTC</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col c1">
+                    <p>Lat<span class="required-marker">*</span></p>
+                </div>
+                <div class="col c5">
+                    <input class="short required" maxlength="2" required="" min="0" max="89" data-description="Lat. degrees" name="latDeg" type="text" onchange="updateInput(this)">
+                    <span class="addon small">°</span>
+                    <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lat. minutes" name="latMin" type="text" onchange="updateInput(this)">
+                    <span class="addon small">'</span>
+                    <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lat. seconds" name="latSec" type="text" onchange="updateInput(this)">
+                    <span class="addon small">''</span> 
+
+                    <select name="latDir"  class="required" onchange="updateInput(this)">
+                        <option selected="selected"></option>
+                        <option>
+                            N
+                        </option>
+                        <option>
+                            S
+                        </option>
+                    </select>
+
+                </div>
+                <div class="col c1">
+                    <p>Lon<span class="required-marker">*</span></p>
+                </div>
+                <div class="col c5">
+                    <input class="short required" maxlength="3" required="" min="0" max="179" data-description="Lon. degrees" name="lonDeg" type="text" onchange="updateInput(this)">
+                    <span class="addon small">°</span>
+                    <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lon. minutes" name="lonMin" type="text" onchange="updateInput(this)">
+                    <span class="addon small">'</span>
+                    <input class="short required" maxlength="2" required="" min="0" max="59" data-description="Lon. seconds" name="lonSec" type="text" onchange="updateInput(this)">
+                    <span class="addon small">''</span>
+                    <select name="lonDir" class="required" onchange="updateInput(this)">
+                        <option selected="selected"></option>
+                        <option>
+                            E
+                        </option>
+                        <option>
+                            W
+                        </option>
+                    </select>
+
+                </div>
+            </div>
+
+            <h2>Observed Weather</h2>
+            <div class="row low">
+                <div class="col c3">
+                    &nbsp;
+                </div>
+                <div class="col c1">
+                    <strong>Direction</strong>
+                </div>
+                <div class="col c2">
+                    <strong>Value</strong>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col c3">
+                        <p>Observed wind (direction and force)</p>
+                    </div>
+                    <div class="col c1">
+                            <select name="WindDir">
+                                <option value="">
+                                    &nbsp;
+                                </option>
+                                <option value="N">
+                                    N
+                                </option>
+                                <option value="NNE">
+                                    NNE
+                                </option>
+                                <option value="NE">
+                                    NE
+                                </option>
+                                <option value="ENE">
+                                    ENE
+                                </option>
+                                <option value="E">
+                                    E
+                                </option>
+                                <option value="ESE">
+                                    ESE
+                                </option>
+                                <option value="SE">
+                                    SE
+                                </option>
+                                <option value="SSE">
+                                    SSE
+                                </option>
+                                <option value="S">
+                                    S
+                                </option>
+                                <option value="SSW">
+                                    SSW
+                                </option>
+                                <option value="SW">
+                                    SW
+                                </option>
+                                <option value="WSW">
+                                    WSW
+                                </option>
+                                <option value="W">
+                                    W
+                                </option>
+                                <option value="WNW">
+                                    WNW
+                                </option>
+                                <option value="NW">
+                                    NW
+                                </option>
+                                <option value="NNW">
+                                    NNW
+                                </option>
+                            </select>
+                    </div>
+                    <div class="col c7">
+                        <input class="medium " name="Wind" maxlength="6" type="number">
+                            <input type="radio" name="obsWindRadio" value="kts" id="obsWindRadioKts" checked=""><label for="obsWindRadioKts">Kts</label>
+                            <input type="radio" name="obsWindRadio" value="bft" id="obsWindRadioBft"><label for="obsWindRadioBft">Bft</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c3">
+                        <p>Observed windsea</p>
+                    </div>
+                    <div class="col c1">
+                            <p>&nbsp;</p>
+                    </div>
+                    <div class="col c7">
+                        <input class="medium " name="Sea" maxlength="6" type="number">
+                            <span class="addon info">mtr</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c3">
+                        <p>Observed swell (direction and height)</p>
+                    </div>
+                    <div class="col c1">
+                            <select name="SwellDir">
+                                <option value="">
+                                    &nbsp;
+                                </option>
+                                <option value="N">
+                                    N
+                                </option>
+                                <option value="NNE">
+                                    NNE
+                                </option>
+                                <option value="NE">
+                                    NE
+                                </option>
+                                <option value="ENE">
+                                    ENE
+                                </option>
+                                <option value="E">
+                                    E
+                                </option>
+                                <option value="ESE">
+                                    ESE
+                                </option>
+                                <option value="SE">
+                                    SE
+                                </option>
+                                <option value="SSE">
+                                    SSE
+                                </option>
+                                <option value="S">
+                                    S
+                                </option>
+                                <option value="SSW">
+                                    SSW
+                                </option>
+                                <option value="SW">
+                                    SW
+                                </option>
+                                <option value="WSW">
+                                    WSW
+                                </option>
+                                <option value="W">
+                                    W
+                                </option>
+                                <option value="WNW">
+                                    WNW
+                                </option>
+                                <option value="NW">
+                                    NW
+                                </option>
+                                <option value="NNW">
+                                    NNW
+                                </option>
+                            </select>
+                    </div>
+                    <div class="col c7">
+                        <input class="medium " name="Swell" maxlength="6" type="number">
+                            <span class="addon info">mtr</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c3">
+                        <p>Obs. current (direction and speed)</p>
+                    </div>
+                    <div class="col c1">
+                            <select name="CurrentDir">
+                                <option value="">
+                                    &nbsp;
+                                </option>
+                                <option value="N">
+                                    N
+                                </option>
+                                <option value="NNE">
+                                    NNE
+                                </option>
+                                <option value="NE">
+                                    NE
+                                </option>
+                                <option value="ENE">
+                                    ENE
+                                </option>
+                                <option value="E">
+                                    E
+                                </option>
+                                <option value="ESE">
+                                    ESE
+                                </option>
+                                <option value="SE">
+                                    SE
+                                </option>
+                                <option value="SSE">
+                                    SSE
+                                </option>
+                                <option value="S">
+                                    S
+                                </option>
+                                <option value="SSW">
+                                    SSW
+                                </option>
+                                <option value="SW">
+                                    SW
+                                </option>
+                                <option value="WSW">
+                                    WSW
+                                </option>
+                                <option value="W">
+                                    W
+                                </option>
+                                <option value="WNW">
+                                    WNW
+                                </option>
+                                <option value="NW">
+                                    NW
+                                </option>
+                                <option value="NNW">
+                                    NNW
+                                </option>
+                            </select>
+                    </div>
+                    <div class="col c7">
+                        <input class="medium " name="Current" maxlength="6" type="number">
+                            <span class="addon info">kts</span>
+                    </div>
+                </div>
+
+            <h2>Bunker Condition</h2>
+            <div class="row low">
+                <div class="col c1andahalf">
+                    &nbsp;
+                </div>
+                <div class="col c1">
+                    HFO
+                </div>
+                <div class="col c1">
+                    HFO LS
+                </div>
+                <div class="col c1">
+                    MDO
+                </div>
+                <div class="col c1">
+                    MDO LS
+                </div>
+                <div class="col c1">
+                    MGO
+                </div>
+                <div class="col c1">
+                    MGO LS
+                </div>
+                <div class="col c1">
+                    MGO ULS
+                </div>
+                <div class="col c1">
+                    LNG
+                </div>
+                <div class="col c1">
+                    Fresh Water
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Main Engine</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Main Engine HFO" min="0" max="100000" maxlength="9" name="MainEngineHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine HFO LS" min="0" max="100000" name="MainEngineHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine MDO" min="0" max="100000" name="MainEngineMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine MDO LS" min="0" max="100000" name="MainEngineMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine MGO" min="0" max="100000" name="MainEngineMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine MGO LS" min="0" max="100000" name="MainEngineMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine MGO ULS" min="0" max="100000" name="MainEngineMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine LNG" min="0" max="100000" name="MainEngineLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Main Engine Fresh Water" min="0" max="100000" name="MainEngineWater" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Auxiliary Engine</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Auxiliary Engine HFO" min="0" max="100000" maxlength="9" name="AuxEnginesHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine HFO LS" min="0" max="100000" name="AuxEnginesHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine MDO" min="0" max="100000" name="AuxEnginesMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine MDO LS" min="0" max="100000" name="AuxEnginesMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine MGO" min="0" max="100000" name="AuxEnginesMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine MGO LS" min="0" max="100000" name="AuxEnginesMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine MGO ULS" min="0" max="100000" name="AuxEnginesMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine LNG" min="0" max="100000" name="AuxEnginesLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Auxiliary Engine Fresh Water" min="0" max="100000" name="AuxEnginesWater" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Boiler</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Boiler HFO" min="0" max="100000" maxlength="9" name="BoilerHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler HFO LS" min="0" max="100000" name="BoilerHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler MDO" min="0" max="100000" name="BoilerMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler MDO LS" min="0" max="100000" name="BoilerMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler MGO" min="0" max="100000" name="BoilerMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler MGO LS" min="0" max="100000" name="BoilerMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler MGO ULS" min="0" max="100000" name="BoilerMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler LNG" min="0" max="100000" name="BoilerLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Boiler Fresh Water" min="0" max="100000" name="BoilerWater" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Hold/tank washing</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Hold/tank washing HFO" min="0" max="100000" maxlength="9" name="HoldHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing HFO LS" min="0" max="100000" name="HoldHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing MDO" min="0" max="100000" name="HoldMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing MDO LS" min="0" max="100000" name="HoldMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing MGO" min="0" max="100000" name="HoldMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing MGO LS" min="0" max="100000" name="HoldMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing MGO ULS" min="0" max="100000" name="HoldMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing LNG" min="0" max="100000" name="HoldLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Hold/tank washing Fresh Water" min="0" max="100000" name="HoldWater" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Tankheating</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Tankheating HFO" min="0" max="100000" maxlength="9" name="TankHeatingHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating HFO LS" min="0" max="100000" name="TankHeatingHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating MDO" min="0" max="100000" name="TankHeatingMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating MDO LS" min="0" max="100000" name="TankHeatingMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating MGO" min="0" max="100000" name="TankHeatingMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating MGO LS" min="0" max="100000" name="TankHeatingMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating MGO ULS" min="0" max="100000" name="TankHeatingMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating LNG" min="0" max="100000" name="TankHeatingLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Tankheating Fresh Water" min="0" max="100000" name="TankHeatingWater" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Bunkered</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Bunkered HFO" min="0" max="100000" maxlength="9" name="BunkeredHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered HFO LS" min="0" max="100000" name="BunkeredHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered MDO" min="0" max="100000" name="BunkeredMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered MDO LS" min="0" max="100000" name="BunkeredMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered MGO" min="0" max="100000" name="BunkeredMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered MGO LS" min="0" max="100000" name="BunkeredMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered MGO ULS" min="0" max="100000" name="BunkeredMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered LNG" min="0" max="100000" name="BunkeredLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Bunkered Fresh Water" min="0" max="100000" name="BunkeredWater" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Remaining</p>
+                    </div>
+                    <div class="col c1">
+                            <input class="short " data-description="Remaining HFO" min="0" max="100000" maxlength="9" name="ROBHfo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining HFO LS" min="0" max="100000" name="ROBHfoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining MDO" min="0" max="100000" name="ROBMdo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining MDO LS" min="0" max="100000" name="ROBMdoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining MGO" min="0" max="100000" name="ROBMgo" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining MGO LS" min="0" max="100000" name="ROBMgoLs" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining MGO ULS" min="0" max="100000" name="ROBMgoUls" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining LNG" min="0" max="100000" name="ROBLng" type="text">
+                    </div>
+                    <div class="col c1">
+                            <input class="short " maxlength="9" data-description="Remaining Fresh Water" min="0" max="100000" name="ROBWater" type="text">
+                    </div>
+                </div>
+                        <h2>Voyage information</h2>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Generator 1 hours</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator1hrs" data-description="Generator 1 hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>Generator 2 hours</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator2hrs" data-description="Generator 2 hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>Generator 3 hours</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator3hrs" data-description="Generator 3 hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>Generator 4 hours</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator4hrs" data-description="Generator 4 hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>Generator 1 KWhrs</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator1kwhrs" data-description="Generator 1 KWhrs" maxlength="6" type="number"><span class="addon info">KWhrs</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>Generator 2 KWhrs</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator2kwhrs" data-description="Generator 2 KWhrs" maxlength="6" type="number"><span class="addon info">KWhrs</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>Generator 3 KWhrs</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator3kwhrs" data-description="Generator 3 KWhrs" maxlength="6" type="number"><span class="addon info">KWhrs</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>Generator 4 KWhrs</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="Generator4kwhrs" data-description="Generator 4 KWhrs" maxlength="6" type="number"><span class="addon info">KWhrs</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col c1andahalf">
+                        <p>AE1 System oil consumption</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="AE1" data-description="AE1 System oil consumption" maxlength="6" type="number"><span class="addon info">ltr</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>AE2 System oil consumption</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="AE2" data-description="AE2 System oil consumption" maxlength="6" type="number"><span class="addon info">ltr</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>AE3 System oil consumption</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="AE3" data-description="AE3 System oil consumption" maxlength="6" type="number"><span class="addon info">ltr</span>
+                    </div>
+                    <div class="col c1andahalf">
+                        <p>AE4 System oil consumption</p>
+                    </div>
+                    <div class="col c1andahalf">
+                        <input class="info " name="AE4" data-description="AE4 System oil consumption" maxlength="6" type="number"><span class="addon info">ltr</span>
+                    </div>
+                </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Speed Combination (C/P active)</p>
+                    <div class="tooltip">i<span>Please select the speed/fuel consumption combination that will be applicable from the reported time and date onward. These are charter-party conditions received by MeteoGroup. Note that the speed/fuel combination will NOT be applicable on the past period. Please contact us if you have received orders to sail against a different speed/fuel consumption than made selectable</span></div>
+                </div>
+                <div class="col c1andahalf">
+                        <select name="SpeedComb" class="info">
+                                <option>&nbsp;</option>
+
+
+                        </select>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Condition (Laden/Ballast)</p><div class="info-button" data-tooltip="Please select if you are sailing in Laden or Ballast condition">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <select name="Condition" class="info">
+                                <option>&nbsp;</option>
+                            <option>Ballast</option>
+                            <option>Laden</option>
+                        </select>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Cargo amount</p><div class="info-button" data-tooltip="Please enter the amount of cargo on board in Metric Tonnes">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="Cargo" data-description="Cargo amount" maxlength="6" type="number"><span class="addon info">MT</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Fwd Draft</p><div class="info-button" data-tooltip="Forward draft in meters">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="FwdDraft" data-description="Fwd Draft" maxlength="6" type="number"><span class="addon info">m</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Aft Draft</p><div class="tooltip">i<span>Aft draft in meters</span></div><p></p>
+
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="AftDraft" data-description="Aft Draft" maxlength="6" type="number"><span class="addon info">m</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>GM</p><div class="info-button" data-tooltip="GM (m) = actual GM from stability calculation for this voyage">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="GM" data-description="GM" maxlength="6" type="number"><span class="addon info">m</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Ballast Water</p><div class="info-button" data-tooltip="MT (metric tonnes)">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="BallastWater" data-description="Ballast Water" maxlength="6" type="number"><span class="addon info">MT</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Main Engine Load</p><div class="info-button" data-tooltip="Total load in kilowatts since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="MELoad" data-description="Main Engine Load" maxlength="6" type="number"><span class="addon info">kW</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Main Engine revolutions counter</p><div class="info-button" data-tooltip="Average revolutions per minute since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="MERevolutions" data-description="Main Engine revolutions counter" maxlength="6" type="number"><span class="addon info">number</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Main Engine Power</p><div class="info-button" data-tooltip="Total generated power in kilowatt hours since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="MEKwhrs" data-description="Main Engine Power" maxlength="6" type="number"><span class="addon info">Kwhrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Average BHP</p><div class="info-button" data-tooltip="Average Brake Horse Power">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="AverageBHP" data-description="Average BHP" maxlength="6" type="number"><span class="addon info">BHP</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Shaft Torque</p><div class="info-button" data-tooltip="kNm (kilo Newton meter)">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="ShaftTorque" data-description="Shaft Torque" maxlength="6" type="number"><span class="addon info">kNm</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Observed Distance</p><div class="info-button" data-tooltip="Total observed distance since last report in Nautical miles">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="ObsDist" data-description="Observed Distance" maxlength="6" type="number"><span class="addon info">nm</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Engine Distance</p><div class="info-button" data-tooltip="In Nautical Miles">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="EngDist" data-description="Engine Distance" maxlength="6" type="number"><span class="addon info">nm</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Surface (Log) Distance</p><div class="info-button" data-tooltip="Total log distance since last report in Nautical miles">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="SurfaceLogDistance" data-description="Surface (Log) Distance" maxlength="6" type="number"><span class="addon info">nm</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Log Speed</p><div class="info-button" data-tooltip="Speed as taken from the Log in knots">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="LogSpeed" data-description="Log Speed" maxlength="6" type="number"><span class="addon info">kts</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Miles to go</p><div class="info-button" data-tooltip="In Nautical Miles">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="MilesToGo" data-description="Miles to go" maxlength="6" type="number"><span class="addon info">nm</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Steaming time (since last update)</p><div class="info-button" data-tooltip="Please enter the hours of steaming time since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="SteamingTime" data-description="Steaming time (since last update)" maxlength="6" type="number"><span class="addon info">hrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Stopped time (since last update)</p><div class="info-button" data-tooltip="Please enter the hours stopped since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="StoppedTime" data-description="Stopped time (since last update)" maxlength="6" type="number"><span class="addon info">hrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Propellor pitch</p><div class="info-button" data-tooltip="Pitch setting in degrees ( only applicable for vessels with an adjustable pitch propeller system)">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="PropellorPitch" data-description="Propellor pitch" maxlength="6" type="number"><span class="addon info">degr</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Slip</p><div class="info-button" data-tooltip="%">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="Slip" data-description="Slip" maxlength="6" type="number"><span class="addon info">%</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Sludge produced</p><div class="info-button" data-tooltip="Quantity of Sludge produced in liters since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="Sludge" data-description="Sludge produced" maxlength="6" type="number"><span class="addon info">ltr</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Cylinder Oil consumption</p><div class="info-button" data-tooltip="Consumption in liters since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="CylinderOilCons" data-description="Cylinder Oil consumption" maxlength="6" type="number"><span class="addon info">ltr</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>System Oil consumption (ME)</p><div class="info-button" data-tooltip="Total Main Engine oil consumption in liters since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="SystemOilConsME" data-description="System Oil consumption (ME)" maxlength="6" type="number"><span class="addon info">ltr</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>FW generator hours</p><div class="info-button" data-tooltip="Please enter the number of running hours of the Fresh Water Generator since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="GenHours" data-description="FW generator hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Boiler Hours</p><div class="info-button" data-tooltip="">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="BoilerHours" data-description="Boiler Hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Incinerator Hours</p><div class="info-button" data-tooltip="Please enter the number of hours the incinerator has been running since the last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="IncineratorHours" data-description="Incinerator Hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Shaft generator Hours</p><div class="info-button" data-tooltip="Please enter the number of hours the Shaft generator has been running since the last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="ShaftGenHours" data-description="Shaft generator Hours" maxlength="6" type="number"><span class="addon info">hrs</span>
+                </div>
+                    </div>
+                    <div class="row">
+                <div class="col c1andahalf">
+                    <p>Shaft generator KWhrs</p><div class="info-button" data-tooltip="Total generated power in kilowatt hours since last report">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="ShaftGenKwhrs" data-description="Shaft generator KWhrs" maxlength="6" type="number"><span class="addon info">KWhrs</span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Reefer plugs in use</p><div class="info-button" data-tooltip="Total connections used">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="ReeferPlugs" data-description="Reefer plugs in use" maxlength="6" type="number"><span class="addon info"></span>
+                </div>
+                <div class="col c1andahalf">
+                    <p>Average RPM Last 24hr</p><div class="info-button" data-tooltip="Please enter the average RPM of the main engine in the last 24hrs">i</div><p></p>
+                </div>
+                <div class="col c1andahalf">
+                        <input class="info " name="AverageRPM" data-description="Average RPM Last 24hr" maxlength="6" type="number"><span class="addon info">RPM</span>
+                </div>
+            <h2>Comments</h2>
+            <textarea cols="100" maxlength="255" name="comments" rows="5"></textarea>
+            <p>
+                <a class="btn btn-b smooth" onclick="Submit()">Send Email</a> <a class="btn btn-sm smooth" onclick="Submit(&quot;text&quot;)">Save Text</a>
+                <textarea cols="100" id="emailTextArea" rows="10"></textarea>
+            </p>
+        
+    </div></form>
+
+</div></body></html>
