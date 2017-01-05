@@ -1128,7 +1128,7 @@
             var requiredFields = document.querySelectorAll('[required]');
             for(var i = 0; i < requiredFields.length; i++)
             {
-                if(requiredFields[i].dataset.value == "") {
+                if(!!requiredFields[i].dataset.value == false) {
                     errorMsg += requiredFields[i].dataset.description + " is required\n";
 
                     var classAttr = requiredFields[i].attributes["class"].value;
